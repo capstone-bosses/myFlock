@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/Home';
+import MapView from '../screens/MapView';
 
 const StackNavigator = (props) => {
 	const Stack = createStackNavigator();
@@ -14,6 +15,7 @@ const StackNavigator = (props) => {
 			options={{ gestureEnabled: false }}
 		>
 			<Stack.Screen name="Home" component={Home} />
+			<Stack.Screen name="Map" component={MapView} />
 		</Stack.Navigator>
 	);
 };
