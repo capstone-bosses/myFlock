@@ -8,13 +8,15 @@ import AddInterest from '../screens/AddInterest';
 import LoginScreen from '../screens/Login';
 import EditProfileScreen from '../screens/EditProfileScreen';
 import ProfileView from '../screens/ProfileView';
+import RegisterScreen from '../screens/RegisterScreen';
 
 //whatever you do, MAKE SURE YOU ADD A PERIOD IN BETWEEN TAB.NAVIGATOR ELSE IT WILL NOT COMPILE
 //YOU WILL SPEND HOURS WITH A BLACK SCREEN AND NO CONSOLE.LOG NOT KNOWING WHAT HAPPENED
-function TabNavigator(props) {
+function TabNavigator({}) {
 	const Tab = createBottomTabNavigator();
 
 	return (
+
 		<Tab.Navigator
 			initialRouteName="Home"
 			activeColor="#1f142e"
@@ -47,6 +49,7 @@ function TabNavigator(props) {
 			<Tab.Screen name="login" component={LoginScreen} />
 			<Tab.Screen name="edit profile" component={EditProfileScreen} />
 			<Tab.Screen name="profile" component={ProfileView} />
+
 		</Tab.Navigator>
 	);
 }
