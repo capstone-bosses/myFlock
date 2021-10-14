@@ -1,56 +1,88 @@
-import React, {useState} from 'react';
-import { StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
-import { Button, Input } from 'react-native-elements'
+import { Button, Input, Text } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
 
 const RegisterScreen = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [imageUrl, setImageUrl] = useState('')
-    return (
-        <KeyboardAvoidingView behavior='padding' style={styles.container}>
-            <StatusBar style='light' />
-            <Text h3 style={{marginBottom: 50}}>
-                Create a myFlock account
-            </Text>
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [pronouns, setPronouns] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
 
-            <View style={styles.inputContainer}>
-                <Input 
-                placeholder='Full Name' 
-                autofocus 
-                type='text' 
-                value={name} 
-                onChangeText={(text) => setName (text)} 
-                />
-                <Input 
-                placeholder='Email'  
-                type='email' 
-                value={email} 
-                onChangeText={(text) => setEmail (text)} 
-                />
-                <Input 
-                placeholder='Password' 
-                type='password' 
-                secureTextEntry
-                value={password} 
-                onChangeText={(text) => setPassword (text)} 
-                />
-                <Input 
-                placeholder='Profile Picture URL(optional)' 
-                type='text' 
-                value={imageUrl} 
-                onChangeText={(text) => setImageUrl (text)}
-                onSubmitEditing={register}
-                />
-            </View>
-        </KeyboardAvoidingView>
-    )
-}
+  const register = () => {};
 
-export default RegisterScreen; 
+  return (
+    <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <StatusBar style="light" />
+      <Text h3 style={{ marginBottom: 50 }}>
+        Create a myFlock account
+      </Text>
+
+      <View style={styles.inputContainer}>
+        <Input
+          placeholder="Name"
+          autofocus
+          type="text"
+          value={name}
+          onChangeText={(text) => setName(text)}
+        />
+        <Input
+          placeholder="Display Name"
+          type="text"
+          value={displayName}
+          onChangeText={(text) => setDisplayName(text)}
+        />
+        <Input
+          placeholder="Pronouns"
+          type="text"
+          value={pronouns}
+          onChangeText={(text) => setPronouns(text)}
+        />
+        <Input
+          placeholder="Email"
+          type="email"
+          value={email}
+          onChangeText={(text) => setEmail(text)}
+        />
+        <Input
+          placeholder="Password"
+          type="password"
+          secureTextEntry
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
+        <Input
+          placeholder="Profile Picture Url (optional)"
+          type="text"
+          value={imageUrl}
+          onChangeText={(text) => setImageUrl(text)}
+          onSubmitEditing={register}
+        />
+      </View>
+      <Button containerStyle={styles.button} raised onPress={register} title="Register" />
+      <View style={{ height: 100}} />
+    </KeyboardAvoidingView>
+  );
+};
+
+export default RegisterScreen;
 
 const styles = StyleSheet.create({
-    container: {}
-})
+  container: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10, 
+      backgroundColor: 'white'
+  },
+  button: {
+      width: 200,
+      marginTop: 10,
+  },
+  inputContainer: {
+      width: 300,
+  }
+});
