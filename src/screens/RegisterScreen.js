@@ -1,19 +1,20 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { KeyboardAvoidingView } from 'react-native';
 import { Button, Input, Text } from 'react-native-elements';
 import { StatusBar } from 'expo-status-bar';
-// import { auth } from '../firebase';
+import { auth } from '../../firebase';
 
 const RegisterScreen = () => {
-  const [name, setName] = useState('')''
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [pronouns, setPronouns] = useState('');
   const [imageUrl, setImageUrl] = useState('');
 
   const register = () => {
-    auth
+ auth
       .createUserWithEmailAndPassword(email, password)
       .then((authUser) => {
         authUser.user.update({
