@@ -6,7 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 // import { auth } from '../firebase';
 
 const RegisterScreen = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('')''
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [pronouns, setPronouns] = useState('');
