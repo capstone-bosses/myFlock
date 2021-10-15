@@ -13,6 +13,7 @@ const ProfileView = () => {
 			<Text>Bio: {user.intro} </Text>
 			<Text>Interests: {user.interests}</Text>
 			<FriendsList />
+			<Text>Location: {user.location.name}</Text>
 		</View>
 	);
 };
@@ -27,8 +28,8 @@ const styles = StyleSheet.create({
 		width: 250,
 		marginBottom: 20,
 		borderRadius: 125,
-		borderWidth: 10,
-		borderColor: '#bf90b1',
+		borderWidth: 8,
+		borderColor: '#e8984e',
 		alignItems: 'center',
 	},
 	profileName: {
