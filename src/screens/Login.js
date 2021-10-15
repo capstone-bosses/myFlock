@@ -20,10 +20,10 @@ const LoginScreen = ({ navigation }) => {
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((authUser) => {
 			if (authUser) {
-<<<<<<< HEAD
-=======
+
+
 				alert('Hello-logged in!');
->>>>>>> 02d4298c5e6ca95c01bf0b64e199792a69485189
+
 				navigation.replace("Home")
 			}
 		});
