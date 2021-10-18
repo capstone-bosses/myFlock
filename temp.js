@@ -1,11 +1,11 @@
 {
-	/* <Stack.Navigator headerMode="none">
-	<>
-		<Stack.Screen name="Onboard" component={Onboarding} />
-		<Stack.Screen name="HomePage" component={Home} />
-		<Stack.Screen name="LogIn" component={LoginScreen} />
-	</>
-</Stack.Navigator>; */
+	nearbyUsers.map((element, index) => {
+		return (
+			<Marker
+				pinColor="red"
+				key={index}
+				coordinate={{ latitude: 47.7330388, longitude: 122.40371218 }}
+			/>
+		);
+	});
 }
-
-// navigation.navigate('HomePage', { email, password });

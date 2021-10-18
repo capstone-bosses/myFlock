@@ -1,7 +1,17 @@
+import React from 'react';
 import geohash from 'ngeohash';
+import { Text, View } from 'react-native';
 
-const latitude = -37.4689556;
-const longitude = -72.352495;
-const hash = geohash.encode(latitude, longitude);
+const encode = () => {
+	const latitude = 47.62818032;
+	const longitude = 122.29212331;
+	const hash = geohash.encode(latitude, longitude);
 
-console.log(hash);
+	return (
+		<View>
+			<Text>{hash}</Text>
+		</View>
+	);
+};
+
+export default encode;
