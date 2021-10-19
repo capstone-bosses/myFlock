@@ -17,6 +17,7 @@ const NestView = ({navigation}) => {
   }, [navigation]);
 
   useEffect(() => {
+    console.log('this is nestview')
     const unsubscribe = db.collection('chats').onSnapshot((snapshot) => {
       setChats(
         snapshot.docs.map((doc) => ({
@@ -26,7 +27,7 @@ const NestView = ({navigation}) => {
       );
     });
     return unsubscribe;
-  }, [chats]);
+  }, []);
 
   const enterChat = (id, chatName) => {
     // navigation.navigate("Chat", {
